@@ -1,0 +1,773 @@
+/*--Arya Karami Homepage --*/
+/*-- Import font --*/
+@import url('https://fonts.googleapis.com/css2?family=Anaheim&display=swap');
+
+/*-- CSS Variables --*/
+:root {
+    --color-primary: #0b2e59;
+    --color-link: #0066cc;
+    --color-text-primary: #333333;
+    --color-text-secondary: #666666;
+    --color-bg-light: #f8f9fa;
+    --color-border: #e5e5e5;
+    --font-main: 'Anaheim', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --container-width: 960px;
+}
+
+/*-- Reset --*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-- Base Styles --*/
+body {
+    font-family: var(--font-main);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/*-- Container --*/
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/*-- Header Styles --*/
+header {
+    background-color: var(--color-bg-light);
+    border-bottom: 1px solid var(--color-border);
+    padding: 2rem 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profile-photo {
+    width: 165px;
+    height: 165px;
+    object-fit: cover;
+
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    /* Cut the bottom part */
+    clip-path: inset(0 0 12px 0 round 0%);
+}
+
+.header-text h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.1rem;
+}
+
+.header-links {
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.header-links a {
+    color: var(--color-link);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.header-links a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.header-links .divider {
+    color: #ccc;
+    margin: 0 0.5rem;
+    font-weight: 300;
+}
+
+/*-- Responsive Design --*/
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .header-text h1 {
+        font-size: 1.75rem;
+    }
+}
+
+/*-- Footer --*/
+footer {
+    clear: both; /* ensures footer appears below floated elements */
+    background-color: var(--color-bg-light);
+    border-top: 1px solid var(--color-border);
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    text-align: center;
+    font-family: var(--font-main);
+}
+
+footer p {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    margin: 0.25rem 0;
+}
+
+footer a {
+    color: var(--color-link);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+footer .footer-note {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    margin-top: 0.5rem;
+}
+
+/*-- Responsive adjustments --*/
+@media (max-width: 768px) {
+    footer {
+        padding: 1.5rem 0;
+    }
+
+    footer a {
+        display: inline-block;
+        margin: 0.25rem;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/*-- Sidebar Navigation under Header (Vertical) --*/
+.sidebar {
+    width: 100%;
+    background-color: var(--color-bg-light);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+    box-sizing: border-box;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* vertical stack */
+    align-items: flex-start; /* left-aligned links */
+}
+
+.sidebar-links li {
+    margin: 0.5rem 0; /* vertical spacing between links */
+}
+
+.sidebar-links a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.2s ease, background 0.2s ease;
+    display: block;
+    width: 100%;
+}
+
+.sidebar-links a:hover,
+.sidebar-links a.active {
+    color: var(--color-link);
+    background-color: rgba(0, 102, 204, 0.1);
+    border-radius: 4px;
+}
+
+/*-- Main content --*/
+.main-content {
+    padding: 2rem 1rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+/*-- Responsive adjustments --*/
+@media (max-width: 768px) {
+    .sidebar-links {
+        align-items: center; /* center links on mobile */
+    }
+
+    .sidebar-links li {
+        margin: 0.25rem 0;
+    }
+
+    .sidebar-links a {
+        padding: 0.5rem 1rem;
+        text-align: center;
+    }
+}
+/*-- Sidebar Navigation under Header --*/
+.sidebar {
+    width: 200px; /* smaller width */
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    padding: 1rem;
+    box-sizing: border-box;
+    float: left; /* align left */
+    margin-right: 2rem; /* space between sidebar and main content */
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* vertical stack */
+}
+
+.sidebar-links li {
+    margin: 0.5rem 0; /* vertical spacing */
+}
+
+.sidebar-links a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    display: block;
+    transition: color 0.2s ease, background 0.2s ease;
+    border-radius: 4px;
+}
+
+.sidebar-links a:hover,
+.sidebar-links a.active {
+    color: var(--color-link);
+    background-color: rgba(0, 102, 204, 0.1);
+}
+
+/*-- Main content next to sidebar --*/
+.main-content {
+    margin-left: 220px; /* sidebar width + margin */
+    padding: 2rem 1rem;
+    max-width: var(--container-width);
+}
+
+/*-- Responsive adjustments --*/
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+        border: 1px solid var(--color-border);
+        padding: 0.5rem 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .sidebar-links {
+        align-items: center;
+    }
+
+    .sidebar-links li {
+        margin: 0.25rem 0;
+    }
+
+    .sidebar-links a {
+        text-align: center;
+        padding: 0.5rem;
+    }
+}
+.about-section h2 {
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 6%;        /* underline spans 60% of text width */
+}
+.Research-Interests h2 {
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 15%;        /* underline spans 60% of text width */
+}
+.Research-Experience1 h2 {
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 57%;        /* underline spans 60% of text width */
+}
+.Research-Experience2 h2 {
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 90%;        /* underline spans 60% of text width */
+}
+.Research-Experience3 h2 {
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 93%;        /* underline spans 60% of text width */
+}
+.Research-Experience4 h2 {
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 60%;        /* underline spans 60% of text width */
+}
+.date {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    margin-left: 0.5rem;
+}
+.ResearchExperience-photo1 {
+    width: 390px;
+    height: 330px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 30.5rem;
+}
+.ResearchExperience-photo2 {
+    width: 600px;
+    height: 240px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 10rem;
+}
+.ResearchExperience-photo3 {
+    width: 320px;
+    height: 180px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 20rem;
+}
+/*
+.ResearchExperience-photo4 {
+    width: 3000px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}*/
+.ResearchExperience-photo4 {
+    width: 600px;
+    height: 280px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 10rem;
+}
+/* --------------------------------------------
+   Publication Section
+   -------------------------------------------- */
+.Publicationslist h2 {
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 15%;        /* underline spans 60% of text width */
+}
+.publication-item1 {
+    border-left: 3px solid var(--color-border);
+    padding-left: 1rem;
+    margin-left: 14rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.2s ease;
+    width: var(--container-width);
+}
+.publication-item2 {
+    border-left: 3px solid var(--color-border);
+    padding-left: 1rem;
+    margin-left: 14rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.2s ease;
+    width: var(--container-width);
+}
+.publication-item:hover {
+    border-left-color: var(--color-link);
+}
+.publication-item h4 {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--color-text-primary);
+}
+.publication-item p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+}
+/* --------------------------------------------
+   Courses Section
+   -------------------------------------------- */
+.Courseslist h2 {
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 8%;        /* underline spans 60% of text width */
+}
+/* --------------------------------------------
+   Table Styling for Courses Section
+   -------------------------------------------- */
+.Courseslist {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.Courseslist h2 {
+    color: var(--color-primary, #0b2e59); /* fallback color */
+    border-bottom: 1px solid var(--color-primary, #0b2e59);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.Courseslist table {
+    width: 80%;
+    margin: 0 auto;             /* centers the table */
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+/* Table cells and headers */
+.Courseslist table td,
+.Courseslist table th {
+    border: 2px double #000;    /* table border style */
+    padding: 6px;
+    text-align: center;          /* horizontally center text */
+    vertical-align: middle;      /* vertically center text */
+}
+
+/* First row (header row) */
+.Courseslist table tr:first-child td {
+    font-weight: bold;
+    background-color: #f0f6ff;   /* highlight first row */
+}
+
+/* Column widths */
+.Courseslist table td:nth-child(1),
+.Courseslist table th:nth-child(1) {
+    width: 350px;       /* first column width in pixels */
+}
+
+.Courseslist table td:nth-child(2),
+.Courseslist table th:nth-child(2) {
+    width: 350px;       /* second column width in pixels */
+}
+
+/* Row heights (applies to all rows) */
+.Courseslist table tr {
+    height: 35px;       /* adjust row height as needed */
+}
+
+/* Link styling */
+.Courseslist table td a {
+    display: block;             /* ensures link text is centered */
+    text-align: center;
+    color: var(--color-link, #0066cc);
+    text-decoration: none;
+}
+
+.Courseslist table td a:hover {
+    color: var(--color-primary, #0b2e59);
+    text-decoration: underline;
+}
+/* --------------------------------------------
+   Software Section
+   -------------------------------------------- */
+.Software h2 {
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 26%;        /* underline spans 60% of text width */
+}
+.software-item1 {
+    border-left: 4px solid var(--color-border);
+    padding-left: 1rem;
+    margin-left: 14rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.2s ease;
+    width: var(--container-width);
+}
+.Software h4 a {
+    color:  #0066cc; /* choose your color */
+}
+/* --------------------------------------------
+   Post Section
+-------------------------------------------- */
+.Post-section {
+    max-width: var(--container-width);
+    margin: 0rem auto;
+    padding: 0rem 0rem;
+}
+
+.Post-section h2 {
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 13%; /* adjust underline width */
+}
+
+.post-item {
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    margin-left: 5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-item h3 {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.post-item .date {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-left: 0rem;
+    margin-bottom: 0.75rem;
+}
+
+.post-item p {
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+}
+
+.post-item a.read-more {
+    color: var(--color-link);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.post-item a.read-more:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .Post-section {
+        padding: 1rem;
+    }
+
+    .post-item {
+        padding: 1rem;
+    }
+
+    .Post-section h2 {
+        width: 30%;
+    }
+}
+/* --------------------------------------------
+   Post Readmore Section
+-------------------------------------------- */
+.Post-readmore h2 {
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 0rem;
+    margin-bottom: 0rem;
+    margin-top: 1rem;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 25%; /* adjust underline width */
+}
+.post-photo1 {
+    width: 790px;
+    height: 330px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 7rem;  /* remove big left offset */
+    margin-top: 1rem; /* add small spacing if needed */
+}
+.Figure_caption {
+    font-size: 1rem;
+    /*color: #0066cc;*/
+    font-weight: bold;        /* bold text */
+    text-align: center;       /* center the text */
+    margin: 1rem auto;        /* center block element */
+    margin-left: 14.5rem;
+}
+.justified_paragraph {
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+    margin-left: 14.5rem;
+}
+/* --------------------------------------------
+   Course Module
+   -------------------------------------------- */
+.CoursesModule {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: justify;   /* paragraphs become justified */
+}
+
+.CoursesModule h2 {
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 0rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 18%; /* adjust underline width */
+}
+
+.CoursesModule table {
+    width: 40%; 
+    margin: 0 auto; 
+    border-collapse: collapse; 
+    font-size: 13px;
+    table-layout: fixed;
+}
+
+.CoursesModule table tr:first-child {
+    background-color: #f0f6ff;  /* light blue background */
+}
+
+.CoursesModule table td:nth-child(1),
+.CoursesModule table th:nth-child(1) {
+    width: 50px;        
+}
+
+.CoursesModule table td:nth-child(2),
+.CoursesModule table th:nth-child(2) {
+    width: 450px;        
+}
+
+.CoursesModule table td:nth-child(3),
+.CoursesModule table th:nth-child(3) {
+    width: 150px;        
+}
+
+.CoursesModule table td:nth-child(4),
+.CoursesModule table th:nth-child(4) {
+    width: 150px;        
+}
+
+.CoursesModule table tr {
+    height: 5px;        
+}
+
+.CoursesModule table td,
+.CoursesModule table th {
+    border: 2px double #000;
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+/* --------------------------------------------
+        Tracker code
+-------------------------------------------- */
+.tracker {
+    text-align: left;     
+    width: 100%;
+    padding-left: 10px;    
+}
